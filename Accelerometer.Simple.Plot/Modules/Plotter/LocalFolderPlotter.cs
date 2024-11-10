@@ -54,7 +54,8 @@ public class LocalFolderPlotter : IPlotter
 
     for (var i = 0; i < _pos.Count; i++)
     {
-      lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos[i]));
+      lineSeries.Points.Add(new DataPoint(i, _pos[i]));
+      //lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos[i]));
     }
 
     plotModel.Series.Add(lineSeries);
@@ -99,8 +100,10 @@ public class LocalFolderPlotter : IPlotter
 
     for (var i = 0; i < _time.Count; i++)
     {
-      lineSeries1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos1[i]));
-      lineSeries2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos2[i]));
+      lineSeries1.Points.Add(new DataPoint(i, _pos1[i]));
+      lineSeries2.Points.Add(new DataPoint(i, _pos2[i])); 
+      //lineSeries1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos1[i]));
+      //lineSeries2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos2[i]));
     }
 
     plotModel.Series.Add(lineSeries1);
@@ -157,9 +160,13 @@ public class LocalFolderPlotter : IPlotter
 
     for (var i = 0; i < _time.Count; i++)
     {
-      lineSeries1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos1[i]));
-      lineSeries2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos2[i]));
-      lineSeries3.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos3[i]));
+      lineSeries1.Points.Add(new DataPoint(i, _pos1[i]));
+      lineSeries2.Points.Add(new DataPoint(i, _pos2[i]));
+      lineSeries3.Points.Add(new DataPoint(i, _pos3[i]));
+     
+      //lineSeries1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos1[i]));
+      //lineSeries2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos2[i]));
+      //lineSeries3.Points.Add(new DataPoint(DateTimeAxis.ToDouble(_time[i]), _pos3[i]));
     }
 
     plotModel.Series.Add(lineSeries1);
