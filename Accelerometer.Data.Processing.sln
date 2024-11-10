@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accelerometer.Simple.Plot", "Accelerometer.Simple.Plot\Accelerometer.Simple.Plot.csproj", "{A589EDEB-561F-40D7-9180-C78C884125DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A589EDEB-561F-40D7-9180-C78C884125DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A589EDEB-561F-40D7-9180-C78C884125DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A589EDEB-561F-40D7-9180-C78C884125DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A589EDEB-561F-40D7-9180-C78C884125DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44441B18-28BF-469B-BE53-3FF4DD4F297C}
+	EndGlobalSection
+EndGlobal
