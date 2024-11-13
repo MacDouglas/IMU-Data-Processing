@@ -8,6 +8,12 @@ namespace Accelerometer.Simple.Plot.Modules.SampleReader;
 public class LocalFileSampleReaderImpl : ISampleReader
 {
   private readonly string[] p_dateFormats = {
+    "yyyy-M-d HH:m:s:f",
+    "yyyy-M-d HH:m:s:ff",
+    "yyyy-M-d HH:m:s:fff",
+    "yyyy-M-d HH:m:ss:f",
+    "yyyy-M-d HH:m:ss:ff",
+    "yyyy-M-d HH:m:ss:fff",
     "yyyy-M-d HH:mm:s:f",
     "yyyy-M-d HH:mm:s:ff",
     "yyyy-M-d HH:mm:s:fff",
@@ -21,7 +27,6 @@ public class LocalFileSampleReaderImpl : ISampleReader
     if (string.IsNullOrEmpty(_pathToSample))
       throw new ArgumentNullException("Неверный путь до файла замеров", nameof(_pathToSample));
 
-    var time = new List<DateTime>();
     var trajectoryPoints = new List<SamplePoint>();
 
     using var sr = new StreamReader(_pathToSample);
@@ -34,8 +39,6 @@ public class LocalFileSampleReaderImpl : ISampleReader
       {
         if (DateTime.TryParseExact(parts[0], p_dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var parsedDate))
         {
-          time.Add(parsedDate);
-
           double.TryParse(parts[2], CultureInfo.InvariantCulture, out var accX);
           double.TryParse(parts[3], CultureInfo.InvariantCulture, out var accY);
           double.TryParse(parts[4], CultureInfo.InvariantCulture, out var accZ);
@@ -53,6 +56,6 @@ public class LocalFileSampleReaderImpl : ISampleReader
       }
     }
 
-    return new SamplesResult(trajectoryPoints, time);
+    return new SamplesResult(trajectoryPoints);
   }
 }
